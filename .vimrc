@@ -10,21 +10,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'        " display buffers on screen like tabs
-Plug 'justinmk/vim-gtfo'              " terminal-got,folder-gof
 Plug 'danro/rename.vim'               
 Plug 'terryma/vim-multiple-cursors'   " multiple cursors
-Plug 'while1eq1/vim-monokai-black'    " black monokai instead of grey
 Plug 'godlygeek/tabular'              " aligns text
 Plug 'scrooloose/nerdcommenter'          " commenter
 Plug 'mhinz/vim-startify'             " fancy start screen
 Plug 'vim-scripts/mru.vim'
-Plug 'mhartington/oceanic-next'
-Plug 'tpope/vim-fugitive'             " Git wrapper
-Plug 'easymotion/vim-easymotion'
-Plug 'joshdick/onedark.vim'
-Plug 'reedes/vim-colors-pencil'
 Plug 'suan/vim-instant-markdown'
-Plug 'tpope/vim-surround'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'brooth/far.vim'
+Plug 'Lenovsky/nuake'
+
+Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 "}}}
@@ -94,10 +92,16 @@ let g:NERDTrimTrailingWhitespace = 1
 "" NerdTree
 nnoremap <F2> :NERDTreeToggle <CR>
 "" MRU
-nnoremap <S-r> :MRU <CR>
 "" NerdCommenter
+nnoremap <S-e> :MRU <CR>
 nnoremap <S-c> :call NERDComment(0,"toggle")<CR>
 vnoremap <S-c> :call NERDComment(0,"toggle")<CR>
+"" Coc.nvim
+source .vim/scripts/coc.vim
+"" Nuake
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
 " }}}
 
 " Remappings {{{
